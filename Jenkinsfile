@@ -1,4 +1,4 @@
-def gv
+def rootDir = pwd()
 pipeline{
     agent any
     parameters{
@@ -10,7 +10,7 @@ pipeline{
          stage("init"){
             steps{
                 script{
-                    gv = load "./script.groovy"
+                    gv = load "${rootDir}/script.groovy"
                 }
             }
         }
